@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Item : Card {
 
-    private Effect effect;
-    private ClassType[] restrinctions;
+    public Effect effect;
+    public List<ClassType> restrinctions;
 	// Use this for initialization
 	void Start () {
-		
+        effect = new Effect();
+        restrinctions = new List<ClassType>();
+        
 	}
 	
 	// Update is called once per frame

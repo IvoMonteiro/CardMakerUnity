@@ -8,3 +8,6 @@
 /Packages
 /ProjectSettings
 /Temp
+/Builds
+*.sln
+*.csproj
