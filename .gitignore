@@ -1,0 +1,10 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Trium Card Maker/v15
+/Assets
+/Library
+/Packages
+/ProjectSettings
+/Temp
