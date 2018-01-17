@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AttrTypeDropDown.cs" />
     <Compile Include="Assets\Scripts\Cards\Card.cs" />
     <Compile Include="Assets\Scripts\Cards\Level.cs" />
     <Compile Include="Assets\Scripts\Cards\LevelLadder.cs" />
@@ -94,7 +95,6 @@
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\Character.cs" />
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\Class.cs" />
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\ClassType.cs" />
-    <Compile Include="Assets\Scripts\Cards\Setup\Characters\ClassTypeDropDown.cs" />
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\Generic.cs" />
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\Hero.cs" />
     <Compile Include="Assets\Scripts\Cards\Setup\Characters\Horde.cs" />
@@ -107,9 +107,9 @@
     <Compile Include="Assets\Scripts\Cards\Setup\QuestCards\SideQuest.cs" />
     <Compile Include="Assets\Scripts\Cards\Universe.cs" />
     <Compile Include="Assets\Scripts\Cards\UniverseTypes.cs" />
-    <Compile Include="Assets\Scripts\DeckPanelController.cs" />
-    <Compile Include="Assets\Scripts\GameDataEditor.cs" />
-    <Compile Include="Assets\Scripts\OptionsPanelController.cs" />
+    <Compile Include="Assets\Scripts\ClassTypeDropDown.cs" />
+    <Compile Include="Assets\Scripts\DeckPanelsController.cs" />
+    <Compile Include="Assets\Scripts\PanelsController.cs" />
     <Compile Include="Assets\Scripts\TabController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
