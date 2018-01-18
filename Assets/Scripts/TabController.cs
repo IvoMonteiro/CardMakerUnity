@@ -9,11 +9,13 @@ public class TabController : MonoBehaviour {
 
     public void SetCurrentDeckPanel()
     {
-        transform.GetComponent<Image>().CrossFadeAlpha(0.1f, 2.0f, false);
+        DeckPanelsController.GetTabs().ForEach(elem => elem.GetComponent<Image>().CrossFadeAlpha(0.1f, 2.0f, false));
+
+        DeckPanelsController.SetCurrentDeckTab(gameObject);
         DeckPanelsController.GetCurrentDeckPanel().SetActive(false);
         DeckPanelsController.SetCurrentDeckPanel(currentDeckPanel);
         DeckPanelsController.GetCurrentDeckPanel().SetActive(true);
-        DeckPanelsController.GetCurrentDeckPanel().transform.SetAsLastSibling();
+        //DeckPanelsController.GetCurrentDeckPanel().transform.SetAsLastSibling();
     }
 
 }
