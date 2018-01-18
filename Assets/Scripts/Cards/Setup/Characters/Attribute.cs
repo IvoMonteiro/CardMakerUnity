@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Attribute : MonoBehaviour {
+[System.Serializable]
+public class Attribute  {
 
     private AttrType _attribute;
     private int _current_value;

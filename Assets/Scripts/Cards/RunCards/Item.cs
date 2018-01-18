@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Item : Card {
 
+    public ItemData data;
     public Effect effect;
     public List<ClassType> restrinctions;
 	// Use this for initialization

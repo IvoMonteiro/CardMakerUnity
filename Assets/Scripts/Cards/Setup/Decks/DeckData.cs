@@ -13,5 +13,7 @@ public class DeckData {
     public int[] ratios;
 
     public List<CardData> listCards;
-
+    public List<SettingData> listSettings;
+    public List<QuestData> listQuests;
+    public List<CharacterData> listCharacters;
 }

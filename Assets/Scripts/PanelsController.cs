@@ -79,21 +79,56 @@ public class PanelsController : MonoBehaviour {
     {
         if (currentCard != null)
         {
-            Card i = null;
+
+            GameObject i = null;
             GameObject dp = DecksPanel.GetComponent<DeckPanelsController>().currentDeckPanel;
             string type = currentCard.GetType().ToString();
-            if(type == "Hero" || type == "Villain" || type == "Generic")
-                i = Instantiate(currentCard, transform.parent.Find("DecksPanel/CharactersPane").transform);
-            else if (type == "Quest" || type == "SideQuest")
-                i = Instantiate(currentCard, transform.parent.Find("DecksPanel/QuestsPane").transform);
-            else if (type == "Setting")
-                i = Instantiate(currentCard, transform.parent.Find("DecksPanel/SettingsPane").transform);
-            else
+            
+            Debug.Log(type);
+            switch(type)
             {
-                i = Instantiate(currentCard, dp.transform);
+                case "Hero":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/CharactersPane").transform);
+                    dp.GetComponent<Deck>().deckData.listCharacters.Add(i.GetComponent<Character>().data);
+                    break;
+                case "Villain":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/CharactersPane").transform);
+                    dp.GetComponent<Deck>().deckData.listCharacters.Add(i.GetComponent<Villain>().data);
+                    break;
+                case "Generic":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/CharactersPane").transform);
+                    dp.GetComponent<Deck>().deckData.listCharacters.Add(i.GetComponent<Generic>().data);
+                    break;
+                case "Quest":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/QuestsPane").transform);
+                    dp.GetComponent<Deck>().deckData.listQuests.Add(i.GetComponent<Quest>().data);
+                    break;
+                case "SideQuest":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/QuestsPane").transform);
+                    dp.GetComponent<Deck>().deckData.listQuests.Add(i.GetComponent<SideQuest>().data);
+                    break;
+                case "Setting":
+                    i = Instantiate(currentObj, transform.parent.Find("DecksPanel/SettingsPane").transform);
+                    dp.GetComponent<Deck>().deckData.listSettings.Add(i.GetComponent<Setting>().data);
+                    break;
+                case "Item":
+                    i = Instantiate(currentObj, dp.transform);
+                    dp.GetComponent<Deck>().deckData.listCards.Add(i.GetComponent<Item>().data);
+                    break;
+                case "Spell":
+                    i = Instantiate(currentObj, dp.transform);
+                    dp.GetComponent<Deck>().deckData.listCards.Add(i.GetComponent<Spell>().data);
+                    break;
+                case "Summon":
+                    i = Instantiate(currentObj, dp.transform);
+                    dp.GetComponent<Deck>().deckData.listCards.Add(i.GetComponent<Summon>().data);
+                    break;
+                default:
+                    i = Instantiate(currentObj, dp.transform);
+                    dp.GetComponent<Deck>().deckData.listCards.Add(i.GetComponent<Card>().cardData);
+                    break;
             }
             i.GetComponent<Card>().cardData.type = type;
-            dp.GetComponent<Deck>().deckData.listCards.Add(i.GetComponent<Card>().cardData);
             //DecksPanel.GetComponent<DeckPanelsController>().GetComponent<DeckList>().decks.Up(dp.GetComponent<Deck>().deckData);
         }
             

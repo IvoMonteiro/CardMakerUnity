@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Character : Card {
 
-    public Dictionary<string, Attribute> _attrDict;
-    public List<Attribute> _attrList;
-    private Class _class;
-    public Dictionary<string, Skill> _skillDict;
-    public List<Skill> _skillList;
+    public CharacterData data;
+    public Dictionary<string, Attribute> attrDict;
+    public List<Attribute> attrList;
+    public Class charClass;
+    public Dictionary<string, Skill> skillDict;
+    public List<Skill> skillList;
     
 
 

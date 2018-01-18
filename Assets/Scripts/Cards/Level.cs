@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level : MonoBehaviour {
+public class Level {
 
     public int current_level = 0;
     public int current_xp = 0;
